@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+.bk-calendar {
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #9aaeb9;
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+.bk-calendar--header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.bk-calendar--header span {
+  display: block;
+}
+.bk-calendar--month-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.bk-calendar--month-prev, .bk-calendar--month-next {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+.bk-calendar--month-prev:before, .bk-calendar--month-prev:after, .bk-calendar--month-next:before, .bk-calendar--month-next:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 3px;
+  background: #617d8c;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.bk-calendar--month-prev:before, .bk-calendar--month-next:before {
+  margin: -5px 0px 0px -7px;
+  transform: rotate(-45deg);
+}
+.bk-calendar--month-prev:after, .bk-calendar--month-next:after {
+  margin: 2px 0px 0px -7px;
+  transform: rotate(45deg);
+}
+.bk-calendar--month-prev:hover, .bk-calendar--month-next:hover {
+  background: rgba(154, 174, 185, 0.2);
+}
+.bk-calendar--month-next {
+  transform: rotate(180deg);
+}
+.bk-calendar--week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #617d8c;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.bk-calendar--week .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  user-select: none;
+}
+.bk-calendar--dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+}
+.bk-calendar--dates .day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+.bk-calendar--dates .day span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #333;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+.bk-calendar--dates .day:hover span {
+  background: rgba(154, 174, 185, 0.3);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.bk-calendar--dates .day.current span {
+  background: rgba(61, 139, 31, 0.1);
+  border-color: rgba(61, 139, 31, 0.2);
+}
+.bk-calendar--dates .day.selected span {
+  background: rgba(61, 139, 31, 0.5);
+  border-color: rgba(61, 139, 31, 0.7);
+}
+.bk-calendar--dates .day.disabled {
+  pointer-events: none;
+}
+.bk-calendar--dates .day.disabled span {
+  background: transparent;
+  border-color: transparent;
+  opacity: 0.4;
+}
+
+.fadeLeft {
+  animation: fadeLeft 0.7s ease both;
+}
+
+.fadeRight {
+  animation: fadeRight 0.7s ease both;
+}
+
+@keyframes fadeLeft {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    transform: translateX(-5px);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+@keyframes fadeRight {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    transform: translateX(5px);
+    opacity: 0;
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/*# sourceMappingURL=bk-calendar.css.map */
